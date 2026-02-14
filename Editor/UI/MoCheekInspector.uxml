@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:Button text="プリセットを読み込む" tooltip="プリセットファイルを読み込んで設定します" name="Import" />
+    <ui:Button text="プリセットをエクスポート" tooltip="プリセットをファイルに書き出して、他の人と共有できるようにします" name="Export" />
+    <uie:PropertyField label="追加ボーン" binding-path="profile.bones" />
+    <ui:EnumField label="ウェイトモード" type="com.guraril.mocheek.runtime.Mode, com.guraril.mocheek.runtime" value="Normalize" binding-path="profile.weightBlendMode" />
+    <ui:Slider label="角度制限" binding-path="profile.allowDegrees" show-input-field="true" high-value="180" />
+    <ui:Slider label="もちもち範囲" high-value="0.2" binding-path="profile.cheekRadius" show-input-field="true" />
+    <uie:CurveField label="ウェイト減衰" binding-path="profile.moveWeightCurve" />
+    <ui:Foldout text="プロファイル作者向け">
+        <ui:Toggle name="DrawGizmoToggle" label="Gizmoを有効化" />
+    </ui:Foldout>
+</ui:UXML>

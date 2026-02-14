@@ -1,0 +1,35 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.guraril.mocheek/Editor/UI/style.uss?fileID=7433441132597879392&amp;guid=161d112978a18db60b41ae1917d3403e&amp;type=3#style" />
+    <ui:VisualElement style="flex-grow: 1; align-self: center; max-width: 400px; min-width: 400px; min-height: 125px; max-height: 125px; background-image: url(&quot;project://database/Packages/com.guraril.mocheek/Editor/UI/Logo/MoCheekLogo.png?fileID=2800000&amp;guid=a47253704aaf29ff99064478a2010dcc&amp;type=3#MoCheekLogo&quot;);" />
+    <ui:VisualElement style="flex-grow: 1; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+        <ui:VisualElement class="step-container" style="flex-shrink: 0;">
+            <ui:Label tabindex="-1" text="Step 1. アバターを選択" name="L-SelectAvatar" class="step-title" />
+            <ui:VisualElement style="flex-direction: row; padding-right: 5px; padding-left: 5px; max-height: 20px; min-height: 20px;">
+                <ui:DropdownField name="AvatarSelection" style="flex-grow: 1; min-width: 70%;" />
+                <uie:ObjectField type="VRC.SDK3.Avatars.Components.VRCAvatarDescriptor, VRCSDK3A" name="SelectedAvatar" style="min-width: 30%; flex-grow: 1; max-width: 30%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="step-container" style="flex-shrink: 0;">
+            <ui:Label tabindex="-1" text="Step 2. プロファイルの設定" name="L-SelectPreset" class="step-title" />
+            <ui:RadioButtonGroup name="ProfileLoadWay" choices="プリセットから選択,ファイルから読み込む" style="padding-top: 0; padding-right: 5px; padding-bottom: 0; padding-left: 5px;" />
+            <ui:VisualElement style="max-height: 20px; min-height: 20px; padding-left: 5px;">
+                <ui:EnumField type="com.guraril.mocheek.editor.MoCheekPreset, com.guraril.mocheek.editor" name="PresetSelection" value="Hakka" />
+                <ui:VisualElement name="ProfileFile" style="display: none; flex-direction: row;">
+                    <ui:Label tabindex="-1" text="ファイルが選択されていません" name="ProfileFilePath" style="align-self: center; overflow: hidden; padding-left: 5px; flex-grow: 1;" />
+                    <ui:Button text="Select" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ProfileFileSelectButton" style="min-width: 75px; max-width: 75px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="step-container" style="overflow: hidden; flex-shrink: 0;">
+            <ui:Label tabindex="-1" text="Step 3. 顔メッシュを選択" name="L-SelectFaceMesh" class="step-title" />
+            <uie:ObjectField type="UnityEngine.SkinnedMeshRenderer, UnityEngine.CoreModule" name="FaceMesh" style="flex-grow: 1; max-height: 20px; min-height: 20px; padding-left: 5px;" />
+            <ui:VisualElement name="W-NotInAvatar" style="flex-grow: 1; display: none;">
+                <ui:Label tabindex="-1" name="L-NotInAvatar" text="注意: 指定されたメッシュはアバター内にありません！" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="step-container" style="flex-shrink: 0;">
+            <ui:Label tabindex="-1" text="Step 4. アバターに設定！" parse-escape-sequences="true" display-tooltip-when-elided="true" name="L-Configure" class="step-title" />
+            <ui:Button text="設定！" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ConfigButton" style="margin-left: 7px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

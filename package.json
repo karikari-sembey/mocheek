@@ -1,0 +1,17 @@
+{
+  "name": "com.guraril.mocheek",
+  "version": "0.1.0",
+  "unity": "2022.3",
+  "displayName": "MoCheek",
+  "description": "MoCheek(もちーく): もちもちほっぺジェネレーター",
+  "url": "https://github.com/karikari-sembey/mocheek",
+  "author": {
+    "name": "karikari-sembey",
+    "url": "https://github.com/karikari-sembey/"
+  },
+  "vpmDependencies": {
+    "com.vrchat.avatars": ">=3.9.0 <3.11.0",
+    "nadena.dev.ndmf": ">=1.9.4"
+  },
+  "legacyFolders": {}
+}
