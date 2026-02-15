@@ -42,13 +42,13 @@ namespace com.guraril.mocheek.editor
 
                 foreach (MoCheek moCheek in moCheekList)
                 {
-                    Process(moCheek, headTransform);
+                    Process(moCheek, headTransform, ctx.AvatarRootObject);
                     Object.DestroyImmediate(moCheek);
                 }
             });
         }
 
-        private void Process(MoCheek moCheek, Transform headTransform)
+        private void Process(MoCheek moCheek, Transform headTransform, GameObject avatarRootObject)
         {
             // Nullであるべきではない(MoCheekのRequiredComponentなので)
             SkinnedMeshRenderer faceMesh = moCheek.gameObject.GetComponent<SkinnedMeshRenderer>();
@@ -64,11 +64,11 @@ namespace com.guraril.mocheek.editor
             {
                 var rootBone = new GameObject(cheekBoneData.baseName);
                 rootBone.transform.SetParent(headTransform, false);
-                rootBone.transform.position = cheekBoneData.rootBonePosition;
+                rootBone.transform.position = cheekBoneData.rootBonePosition + avatarRootObject.transform.position;
 
                 var leafBone = new GameObject(cheekBoneData.baseName + ".001");
                 leafBone.transform.SetParent(rootBone.transform, false);
-                leafBone.transform.position = cheekBoneData.leafBonePosition;
+                leafBone.transform.position = cheekBoneData.leafBonePosition + avatarRootObject.transform.position;
 
                 bones.Add(rootBone.transform);
                 bones.Add(leafBone.transform);
