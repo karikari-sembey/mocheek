@@ -34,3 +34,7 @@ MoCheekはおおよそ5ステップで設定できます！
     - [AAO: Avatar Optimizer](https://vpm.anatawa12.com/avatar-optimizer/ja/)
     - [Modular Avatar](https://modular-avatar.nadena.dev/)
   - どちらも導入されていない場合は、Modular Avatarのリポジトリを追加することで使用できます。
+
+## 導入方法
+
+[ぐらりぃるのVPMリポジトリ](https://vpm.guraril.com/addrepo)からリポジトリを登録して、プロジェクトにMoCheekを追加します。
