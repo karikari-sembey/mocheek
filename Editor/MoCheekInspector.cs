@@ -48,11 +48,23 @@ namespace com.guraril.mocheek.editor
             for (int i = 0; i < self.profile.bones.Length; i++)
             {
                 EditorGUI.BeginChangeCheck();
-                Vector3 pos = Handles.PositionHandle(self.profile.bones[i].leafBonePosition, Quaternion.identity);
+
+                Vector3 pos = Handles.PositionHandle(
+                    Vector3.Scale(self.profile.bones[i].leafBonePosition, self.transform.lossyScale),
+                    Quaternion.identity
+                );
+
                 if (EditorGUI.EndChangeCheck())
                 {
                     Undo.RecordObject(self, "Move Target Position");
-                    self.profile.bones[i].leafBonePosition = pos;
+
+                    self.profile.bones[i].leafBonePosition =
+                        new(
+                            pos.x / self.transform.lossyScale.x,
+                            pos.y / self.transform.lossyScale.y,
+                            pos.z / self.transform.lossyScale.z
+                        );
+
                     EditorUtility.SetDirty(self);
                 }
             }
