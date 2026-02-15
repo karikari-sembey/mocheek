@@ -1,6 +1,6 @@
 {
   "name": "com.guraril.mocheek",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "unity": "2022.3",
   "displayName": "MoCheek",
   "description": "MoCheek(もちーく): もちもちほっぺジェネレーター",
@@ -13,5 +13,6 @@
     "com.vrchat.avatars": ">=3.9.0 <3.11.0",
     "nadena.dev.ndmf": ">=1.9.4"
   },
+  "dependencies": {},
   "legacyFolders": {}
 }
